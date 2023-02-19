@@ -14,13 +14,17 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     Emitter<HomeState> emit,
   ) {
     emit(
-      state.copyWith(
-        status: HomeStatus.loading,
-      ),
-    );
+    //   HomeState(
+    //   mood: state.mood,
+    //   status: HomeStatus.loading,
+    // )
+        state.copyWith(
+          status: HomeStatus.loading,
+        ),
+        );
     emit(
       state.copyWith(
-        mood: e.mood,
+        newMood: e.mood,
         status: HomeStatus.loaded,
       ),
     );

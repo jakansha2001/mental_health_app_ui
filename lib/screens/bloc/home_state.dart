@@ -13,10 +13,10 @@ class HomeState {
   HomeState({required this.mood, required this.status});
 
   HomeState copyWith({
-    String? mood,
+    String? newMood,
     HomeStatus? status,
   }) {
-    return HomeState(mood: mood ?? this.mood, status: status ?? this.status);
+    return HomeState(mood: newMood ?? mood, status: status ?? this.status); //null check by ??
   }
 
   static HomeState initial() {
@@ -26,3 +26,4 @@ class HomeState {
     );
   }
 }
+//newMood == null ? mood : newMood
