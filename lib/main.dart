@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mental_health_app_ui/screens/bloc/home_bloc.dart';
-import 'package:mental_health_app_ui/screens/home_page.dart';
+import 'package:mental_health_app_ui/home/bloc/home_bloc.dart';
+import 'package:mental_health_app_ui/home/screens/home_page.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mental_health_app_ui/emoticon_card.dart';
-import 'package:mental_health_app_ui/exercise_tile.dart';
 
-import 'bloc/home_bloc.dart';
+
+import 'package:mental_health_app_ui/home/bloc/home_bloc.dart';
+import 'package:mental_health_app_ui/home/widgets/emoticon_card.dart';
+import 'package:mental_health_app_ui/home/widgets/exercise_tile.dart';
+
+
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
