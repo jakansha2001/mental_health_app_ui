@@ -1,16 +1,19 @@
-# mental_health_app_ui
+# Mental Health App UI
 
-A new Flutter project.
+Created a Mental Health App UI using Flutter.
 
-## Getting Started
+This repository can be a helpful reference for implementing BLoC.
 
-This project is a starting point for a Flutter application.
+## Inspiration
 
-A few resources to get you started if this is your first Flutter project:
+The design is taken from Dribble.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- [Design](https://dribbble.com/shots/15002657-Mental-Health-App)
+
+![design](https://user-images.githubusercontent.com/64529996/220638625-8c4ef686-2a26-4e26-981c-82decaa9a4e4.png)
+
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
