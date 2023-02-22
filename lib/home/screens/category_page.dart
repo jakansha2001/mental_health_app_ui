@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mental_health_app_ui/home/screens/home_page.dart';
+import 'package:mental_health_app_ui/home/widgets/category_grid.dart';
 import 'package:mental_health_app_ui/home/widgets/exercise_tile.dart';
 
 class CategoryPage extends StatelessWidget {
@@ -8,6 +9,10 @@ class CategoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // bottomNavigationBar: const BottomNavBar(
+      //   currentIndex: 1,
+      // ),
+      backgroundColor: Colors.blue[800],
       body: SafeArea(
           child: Column(
         children: [
@@ -56,37 +61,57 @@ class CategoryPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Text(
-                          'Exercises',
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
+                    const BottomSheetHeaderTitle(
+                      titleText: 'Category',
+                    ),
+                    Expanded(
+                      child: GridView.count(
+                        primary: false,
+                        padding: const EdgeInsets.all(20),
+                        //crossAxisSpacing: 10,
+                        //mainAxisSpacing: 10,
+                        crossAxisCount: 2,
+                        children: [
+                          CategoryGrid(
+                            category: 'Relationship',
+                            color: Colors.purple.shade500,
                           ),
-                        ),
-                        Icon(
-                          Icons.more_horiz,
-                          size: 30,
-                        )
-                      ],
+                          CategoryGrid(
+                            category: 'Career',
+                            color: Colors.blue.shade300,
+                          ),
+                          CategoryGrid(
+                            category: 'Education',
+                            color: Colors.orange.shade500,
+                          ),
+                          CategoryGrid(
+                            category: 'Other',
+                            color: Colors.red.shade500,
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    const BottomSheetHeaderTitle(
+                      titleText: 'Consultant',
                     ),
                     Expanded(
                       child: ListView(
                         //how to use ListView.builder in this?
                         children: const [
                           ExerciseTile(
-                            exercise: 'Speaking Skills',
-                            subExercise: '16 Exercises',
-                            icon: Icons.favorite,
-                            color: Colors.orange,
+                            exercise: 'Bobby Singer',
+                            subExercise: 'Education',
+                            icon: Icons.my_library_music,
+                            color: Colors.green,
                           ),
                           ExerciseTile(
-                            exercise: 'Reading Speed',
-                            subExercise: '8 Exercises',
-                            icon: Icons.person,
-                            color: Colors.pink,
+                            exercise: 'Dean Winchester',
+                            subExercise: 'Career',
+                            icon: Icons.badge_outlined,
+                            color: Colors.red,
                           ),
                           ExerciseTile(
                             exercise: 'Speaking Skills',
@@ -122,6 +147,34 @@ class CategoryPage extends StatelessWidget {
           )
         ],
       )),
+    );
+  }
+}
+
+class BottomSheetHeaderTitle extends StatelessWidget {
+  final String titleText;
+  const BottomSheetHeaderTitle({
+    super.key,
+    required this.titleText,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          titleText,
+          style: const TextStyle(
+            fontSize: 20.0,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const Icon(
+          Icons.more_horiz,
+          size: 30,
+        )
+      ],
     );
   }
 }

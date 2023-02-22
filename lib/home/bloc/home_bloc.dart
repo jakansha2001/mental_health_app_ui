@@ -7,6 +7,13 @@ part 'home_state.dart';
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeBloc() : super(HomeState.initial()) {
     on<MoodChangedEvent>(_onMoodChangedEvent);
+    on<IndexChangedEvent>(_onIndexChangedEvent);
+  }
+
+  void _onIndexChangedEvent(IndexChangedEvent event, Emitter<HomeState> emit) {
+    emit(
+      state.copyWith(newIndex: event.selectedIndex),
+    );
   }
 
   void _onMoodChangedEvent(

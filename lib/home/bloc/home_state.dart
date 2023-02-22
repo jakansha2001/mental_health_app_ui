@@ -9,20 +9,23 @@ enum HomeStatus {
 class HomeState {
   final String mood;
   final HomeStatus status;
+  final int index;
 
-  HomeState({required this.mood, required this.status});
+  HomeState({required this.index, required this.mood, required this.status});
 
-  HomeState copyWith({
-    String? newMood,
-    HomeStatus? status,
-  }) {
-    return HomeState(mood: newMood ?? mood, status: status ?? this.status); //null check by ??
+  HomeState copyWith({String? newMood, HomeStatus? status, int? newIndex}) {
+    return HomeState(
+      mood: newMood ?? mood,
+      status: status ?? this.status,
+      index: newIndex ?? index,
+    ); //null check by ??
   }
 
   static HomeState initial() {
     return HomeState(
       mood: '👋',
       status: HomeStatus.initial,
+      index: 0,
     );
   }
 }

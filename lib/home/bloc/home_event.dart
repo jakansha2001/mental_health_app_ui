@@ -8,3 +8,9 @@ class MoodChangedEvent extends HomeEvent {
 
   MoodChangedEvent({required this.mood});
 }
+
+class IndexChangedEvent extends HomeEvent {
+  final int selectedIndex;
+
+  IndexChangedEvent({required this.selectedIndex});
+}

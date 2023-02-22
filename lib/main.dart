@@ -15,11 +15,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const CategoryPage(),
-      // home: BlocProvider(
-      //   create: (context) => HomeBloc(),
-      //   child: const HomePage(),
-      // ),
+      //home: const CategoryPage(),
+      home: BlocProvider(
+        create: (context) => HomeBloc(),
+        child: const HomePage(),
+      ),
     );
   }
 }
