@@ -289,18 +289,14 @@ class Greet extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Text(
-          'Hi, Jared!',
-          style: greetText,
+        BlocBuilder<HomeBloc, HomeState>(
+          builder: (context, state) {
+            return Text(
+              'Hi, Jared! ${state.mood}',
+              style: greetText,
+            );
+          },
         ),
-        // BlocBuilder<HomeBloc, HomeState>(
-        //   builder: (context, state) {
-        //     return Text(
-        //       'Hi, Jared! ${state.mood}',
-        //       style: greetText,
-        //     );
-        //   },
-        // ),
         const NotificationIcon()
       ],
     );
