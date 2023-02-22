@@ -13,6 +13,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<HomeBloc, HomeState>(
+      listenWhen: (previous, current) => previous.status != current.status,
       listener: (context, state) {
         if (state.status == HomeStatus.loaded) {
           ScaffoldMessenger.of(context).showSnackBar(
@@ -40,9 +41,7 @@ class HomePage extends StatelessWidget {
 }
 
 class _HomeBody extends StatelessWidget {
-  const _HomeBody({
-    super.key,
-  });
+  const _HomeBody();
 
   @override
   Widget build(BuildContext context) {
