@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:mental_health_app_ui/home/screens/home_page.dart';
+import 'package:mental_health_app_ui/home/widgets/bottom_sheet_header_title.dart';
 import 'package:mental_health_app_ui/home/widgets/category_grid.dart';
+import 'package:mental_health_app_ui/home/widgets/date.dart';
 import 'package:mental_health_app_ui/home/widgets/exercise_tile.dart';
+import 'package:mental_health_app_ui/home/widgets/greet.dart';
+import 'package:mental_health_app_ui/home/widgets/search_field.dart';
 
 class CategoryPage extends StatelessWidget {
   const CategoryPage({super.key});
@@ -147,34 +150,6 @@ class CategoryPage extends StatelessWidget {
           )
         ],
       )),
-    );
-  }
-}
-
-class BottomSheetHeaderTitle extends StatelessWidget {
-  final String titleText;
-  const BottomSheetHeaderTitle({
-    super.key,
-    required this.titleText,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          titleText,
-          style: const TextStyle(
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        const Icon(
-          Icons.more_horiz,
-          size: 30,
-        )
-      ],
     );
   }
 }
