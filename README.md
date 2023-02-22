@@ -2,7 +2,12 @@
 
 Created a Mental Health App UI using Flutter.
 
-This repository can be a helpful reference for implementing BLoC.
+This repository can be a helpful reference for the following:
+
+- BLoC
+- Feature Driven Architecture
+- How to use BLoC with BottomNavigationBar
+- Implementing Complex and Cool UI
 
 ## Inspiration
 
